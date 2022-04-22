@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Si la ruta no es un archivo existente o una carpeta existente, reescribir al index.
+# If the path is not an existing file or an existing folder, rewrite to index.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+?)/?$ index.php?url=$1 [L,QSA]
